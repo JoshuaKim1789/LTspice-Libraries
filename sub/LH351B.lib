@@ -1,0 +1,61 @@
+*****************************************************************************************
+* LH351B, Samsung Electronics LED Business
+* PSpice model
+*
+*  Rev0.1    2022-01-14, by 
+*  Copyright 2020 by Samsung Electronics
+*
+**** Model Limitations ****************************************************************
+*
+* - Only the typical forward characteristic (Vf-If diagram) of each LED 
+*   has been modelled.
+*
+* - The typical forward characteristic can vary slightly in reality.
+*
+* - All other Pspice parameters have not been modelled (e.og. reverse characteristic,
+*   transient behaviour. Temperature dependency).
+*
+* - For this reason, transient simulations, simulations in reverse direction and
+    Temperature dependency simulation do not make sense.
+*
+* - The models only work at a Ambient Temperature of 62C
+*   The PSpice parameters are calculated from measured forward voltage values. 
+*   Forward voltages are tested at a current pulse duration of 10 ms and 
+*   a tolerance of +- 0.1V.
+*   Simulations at different temperatures and drive conditions will give 
+*   WRONG simulation results!!
+*
+* - The provided PSpice parameters are calculated values. They might not be identical
+*   with the real physical values.
+*****************************************************************************************
+.MODEL LH351B_AY_MIN D
++ IS=1.87707411737574E-25
++ N=1.74105811081385
++ RS=0.205592530667075
++ TRS1=0
++ TRS2=0
++ EG=2.5
++ XTI=30
+*$
+
+.MODEL LH351B_AY_TYP D
++ IS=1.88444461164512E-25
++ N=1.79496204159106
++ RS=0.211993583775378
++ TRS1=0
++ TRS2=0
++ EG=2.5
++ XTI=30
+*$
+
+.MODEL LH351B_AY_MAX D
++ IS=1.15008438957284E-16
++ N=3.19222630560307
++ RS=0.180214252431675
++ TRS1=0
++ TRS2=0
++ EG=2.5
++ XTI=30
+*$
+
+*****************************************************************************************
